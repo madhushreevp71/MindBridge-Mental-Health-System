@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<link href="css/style.css" rel="stylesheet"/></head>
+<body>
+<!-- ============ LANDING SCREEN ============ -->
+<div class="screen active" id="s-landing">
+<div class="auth-wrap">
+<div class="auth-hero">
+<div class="auth-logo">🧠</div>
+<h1>MindBridge</h1>
+<p>Digital Mental Health Support System for Students</p>
+</div>
+<div style="width:100%;max-width:420px">
+<p style="font-size:13px;color:var(--tx2);text-align:center;margin-bottom:14px">Continue as:</p>
+<div class="role-cards">
+<div class="role-card sel" id="rc-student" onclick="selRole('student')">
+<div class="role-card-icon">🎓</div>
+<h3>Student</h3>
+<p>Track mood &amp; get support</p>
+</div>
+<div class="role-card" id="rc-doctor" onclick="selRole('doctor')">
+<div class="role-card-icon">🩺</div>
+<h3>Doctor</h3>
+<p>Monitor student wellness</p>
+</div>
+</div>
+<button class="btn" onclick="goLogin()">Continue to Login</button>
+<button class="btn btn-ghost" onclick="goSignup()">Create a new account</button>
+</div>
+</div>
+</div>
+<!-- ============ LOGIN SCREEN ============ -->
+<div class="screen" id="s-login">
+<div class="auth-wrap">
+<div class="card">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
+<div id="login-icon" style="width:36px;height:36px;background:var(--teal-l);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px">🎓</div>
+<div><h2 id="login-title" style="margin-bottom:0">Student Login</h2><p style="font-size:12px;color:var(--tx2)">Use your @gmail.com address</p></div>
+</div>
+<div class="form-group">
+<label>Email address</label>
+<input id="login-email" placeholder="you@gmail.com" type="email"/>
+</div>
+<div class="form-group">
+<label>Password</label>
+<input id="login-pass" placeholder="••••••••" type="password"/>
+</div>
+<div id="login-msg"></div>
+<button class="btn" onclick="doLogin()">Sign in</button>
+<div class="links">
+<a onclick="goForgot()">Forgot password?</a>
+<a onclick="goSignup()">Create account</a>
+</div>
+<hr class="divider"/>
+<a onclick="go('s-landing')" style="font-size:12px;color:var(--tx2);cursor:pointer;display:block;text-align:center">← Back</a>
+</div>
+</div>
+</div>
+<!-- ============ SIGNUP SCREEN ============ -->
+<div class="screen" id="s-signup">
+<div class="auth-wrap">
+<div class="card">
+<h2>Create account</h2>
+<div class="tabs" style="margin-bottom:16px">
+<div class="tab active" id="su-tab-s" onclick="suRole('student')">Student</div>
+<div class="tab" id="su-tab-d" onclick="suRole('doctor')">Doctor</div>
+</div>
+<div class="form-group">
+<label>Full name</label>
+<input id="su-name" placeholder="Your name" type="text"/>
+</div>
+<div class="form-group">
+<label>Email address</label>
+<input id="su-email" placeholder="you@gmail.com" type="email"/>
+</div>
+<div class="form-group">
+<label>Password</label>
+<input id="su-pass" placeholder="Min 8 characters" type="password"/>
+</div>
+<div id="su-msg"></div>
+<button class="btn" onclick="doSignup()">Sign up</button>
+<div class="links">
+<a onclick="goLogin()">Already have an account? Sign in</a>
+</div>
+</div>
+</div>
+</div>
+<!-- ============ FORGOT PASSWORD ============ -->
+<div class="screen" id="s-forgot">
+<div class="auth-wrap">
+<div class="card">
+<h2>Reset password</h2>
+<p class="text-sm mb-2">Enter your email and we'll send a reset link.</p>
+<div class="form-group" style="margin-top:16px">
+<label>Email address</label>
+<input id="fp-email" placeholder="you@gmail.com" type="email"/>
+</div>
+<div id="fp-msg"></div>
+<button class="btn" onclick="doForgot()">Send reset link</button>
+<div class="links"><a onclick="goLogin()">← Back to login</a></div>
+</div>
+</div>
+</div>
+<!-- ============ STUDENT DASHBOARD ============ -->
+<div class="screen" id="s-student">
+<div class="nav">
+<div class="nav-brand"><div class="nav-brand-icon">🧠</div> MindBridge</div>
+<div class="nav-user"><span id="st-name">Student</span><button onclick="logout()">Sign out</button></div>
+</div>
+<div class="dash">
+<div class="dash-content">
+<!-- Mood summary -->
+<div class="widget">
+<h3>Today's mood</h3>
+<div class="mood-emoji-row">
+<div class="mood-emoji" onclick="selMood(this,'😔')" title="Sad">😔</div>
+<div class="mood-emoji" onclick="selMood(this,'😐')" title="Neutral">😐</div>
+<div class="mood-emoji" onclick="selMood(this,'🙂')" title="Okay">🙂</div>
+<div class="mood-emoji" onclick="selMood(this,'😊')" title="Good">😊</div>
+<div class="mood-emoji" onclick="selMood(this,'😄')" title="Great">😄</div>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between">
+<span class="text-sm" id="mood-label">Select your mood</span>
+<button onclick="openQModal()" style="font-size:11px;color:var(--teal);background:none;border:none;cursor:pointer">Full assessment →</button>
+</div>
+<div class="divider"></div>
+<div class="week-chart" id="week-chart"></div>
+<div style="display:flex;justify-content:space-between;margin-top:4px">
+<span style="font-size:10px;color:var(--tx3)">Mon</span>
+<span style="font-size:10px;color:var(--tx3)">Tue</span>
+<span style="font-size:10px;color:var(--tx3)">Wed</span>
+<span style="font-size:10px;color:var(--tx3)">Thu</span>
+<span style="font-size:10px;color:var(--tx3)">Fri</span>
+<span style="font-size:10px;color:var(--tx3)">Sat</span>
+<span style="font-size:10px;color:var(--tx3)">Today</span>
+</div>
+</div>
+<!-- Stress indicator -->
+<div class="widget">
+<h3>Stress indicator</h3>
+<div class="stress-med" id="stress-box">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+<span id="stress-pct" style="font-size:24px;font-weight:500;color:var(--amber)">55%</span>
+<span class="badge badge-warn" id="stress-badge">Moderate</span>
+</div>
+<div class="progress-bar-wrap"><div class="progress-bar" id="stress-bar"></div></div>
+<div class="stress-label"><span>Low</span><span>High</span></div>
+</div>
+<div class="divider"></div>
+<div class="stat-row">
+<div class="stat-item"><div class="stat-num" id="phq-score">8</div><div class="stat-lbl">PHQ-9</div></div>
+<div class="stat-item"><div class="stat-num" id="gad-score">6</div><div class="stat-lbl">GAD-7</div></div>
+<div class="stat-item"><div class="stat-num">3</div><div class="stat-lbl">Day streak</div></div>
+</div>
+</div>
+<!-- AI Chatbot -->
+<div class="widget dash-full">
+<h3>AI support chat</h3>
+<div class="chat-messages" id="chat-msgs"></div>
+<div class="chat-typing" id="chat-typing"></div>
+<div class="chat-input-row">
+<input id="chat-in" onkeydown="if(event.key==='Enter')sendChat()" placeholder="How are you feeling today?" type="text"/>
+<button class="chat-send" onclick="sendChat()">↑</button>
+</div>
+</div>
+<!-- Reminders -->
+<div class="widget">
+<h3>Daily self-care</h3>
+<div class="reminder-list" id="reminder-list"></div>
+</div>
+<!-- Tips -->
+<div class="widget">
+<h3>Daily tips</h3>
+<div class="tip-card" id="daily-tip"></div>
+<div class="tip-quote" id="daily-quote"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============ DOCTOR DASHBOARD ============ -->
+<div class="screen" id="s-doctor">
+<div class="nav">
+<div class="nav-brand"><div class="nav-brand-icon">🩺</div> MindBridge — Doctor Portal</div>
+<div class="nav-user"><span id="dr-name">Doctor</span><button onclick="logout()">Sign out</button></div>
+</div>
+<div class="dash">
+<div class="dash-content">
+<!-- Alerts -->
+<div class="widget dash-full">
+<h3>Risk alerts</h3>
+<div class="alert-box"><span class="icon">⚠️</span><div><strong>Arjun Mehta</strong> — PHQ-9 score 18 (Severe depression). Immediate attention recommended.</div></div>
+<div class="alert-box"><span class="icon">⚠️</span><div><strong>Sneha Rao</strong> — GAD-7 score 16 (Severe anxiety). Patient requested appointment.</div></div>
+</div>
+<!-- Stats -->
+<div class="widget">
+<h3>Overview</h3>
+<div class="stat-row">
+<div class="stat-item"><div class="stat-num">24</div><div class="stat-lbl">Students</div></div>
+<div class="stat-item"><div class="stat-num" style="color:var(--red)">3</div><div class="stat-lbl">At risk</div></div>
+<div class="stat-item"><div class="stat-num" style="color:var(--amber)">8</div><div class="stat-lbl">Moderate</div></div>
+</div>
+<div class="divider"></div>
+<div style="font-size:12px;color:var(--tx2)">Response rate this week: <strong style="color:var(--teal)">87%</strong></div>
+</div>
+<!-- Appointments -->
+<div class="widget">
+<h3>Today's appointments</h3>
+<div style="display:flex;flex-direction:column;gap:8px;font-size:13px">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:8px;background:var(--bg2);border-radius:var(--r)">
+<div><strong>Arjun Mehta</strong><div class="text-sm">10:00 AM · Severe</div></div>
+<span class="badge badge-danger">Confirmed</span>
+</div>
+<div style="display:flex;align-items:center;justify-content:space-between;padding:8px;background:var(--bg2);border-radius:var(--r)">
+<div><strong>Sneha Rao</strong><div class="text-sm">2:30 PM · Patient request</div></div>
+<span class="badge badge-warn">Pending</span>
+</div>
+</div>
+</div>
+<!-- Student table -->
+<div class="widget dash-full">
+<h3>Student mental health status</h3>
+<div style="overflow-x:auto">
+<table class="student-table">
+<thead><tr><th>Name</th><th>PHQ-9</th><th>GAD-7</th><th>Severity</th><th>Last check-in</th><th>Action</th></tr></thead>
+<tbody id="student-tbody"></tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ============ MOOD QUESTIONNAIRE MODAL ============ -->
+<div class="modal-bg" id="q-modal" style="display:none">
+<div class="modal">
+<button class="modal-close" onclick="closeQModal()">✕</button>
+<h2>Mental health assessment</h2>
+<p class="text-sm mb-2">Based on PHQ-9 &amp; GAD-7 standardised scales. Your responses are private.</p>
+<div class="q-wrap" id="q-content"></div>
+<div id="q-result" style="display:none;margin-top:16px"></div>
+<button class="btn" id="q-btn" onclick="submitQ()">Analyse responses</button>
+</div>
+</div>
+<!-- ============ RECOMMENDATION MODAL ============ -->
+<div class="modal-bg" id="rec-modal" style="display:none">
+<div class="modal">
+<button class="modal-close" onclick="document.getElementById('rec-modal').style.display='none'">✕</button>
+<h2>Recommended activities</h2>
+<p class="text-sm mb-2">Personalised stress-reducing activities for this student:</p>
+<div id="rec-list" style="display:flex;flex-direction:column;gap:10px;margin-top:14px"></div>
+</div>
+</div>
+
+<script src="js/script.js"></script></body>
+</html>
