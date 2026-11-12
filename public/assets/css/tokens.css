@@ -1,0 +1,91 @@
+/* Design tokens: colour, type, radius, shadow. Everything else reads from here. */
+
+/* Registered so the whole page tint can animate smoothly when the mood changes. */
+@property --mood-a { syntax: '<color>'; inherits: true; initial-value: #2a9d8f; }
+@property --mood-b { syntax: '<color>'; inherits: true; initial-value: #4c8fd9; }
+@property --orb-color { syntax: '<color>'; inherits: true; initial-value: #2a9d8f; }
+
+:root {
+  --font-display: 'Bricolage Grotesque', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Figtree', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+
+  --bg: #eef0fa;
+  --panel: #ffffff;
+  --panel-2: #f5f6fd;
+  --ink: #171a33;
+  --ink-2: #484d70;
+  --ink-3: #686d92;
+  --line: #dcdff0;
+  --brand: #4f4fd0;
+  --brand-ink: #ffffff;
+  --brand-soft: #e7e7fb;
+  --lagoon: #1f8a7e;
+  --gold: #e9a92e;
+  --rose: #d6455d;
+
+  --sev-mild: #1f8a7e;
+  --sev-moderate: #b7791f;
+  --sev-severe: #c93b54;
+  --sev-mild-bg: #dcf1ee;
+  --sev-moderate-bg: #fbeed1;
+  --sev-severe-bg: #fbdfe4;
+
+  --shadow-1: 0 1px 2px rgb(23 26 51 / 0.06), 0 6px 20px -8px rgb(23 26 51 / 0.12);
+  --shadow-2: 0 24px 60px -20px rgb(23 26 51 / 0.35);
+
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 26px;
+
+  /* Garden scene */
+  --sky-top: color-mix(in srgb, var(--mood-a) 40%, #ffffff);
+  --sky-bottom: color-mix(in srgb, var(--mood-b) 18%, #ffffff);
+  --sun: #f6c85f;
+  --hill-far: #a9d3a2;
+  --hill-near: #6fb27a;
+  --leaf: #3f9a5b;
+  --leaf-2: #5bb56f;
+  --stem: #5b7d4a;
+  --bud: #f4b6c2;
+  --bloom-a: #f7d35c;
+  --bloom-b: #f08aa3;
+  --garden-frame: var(--ink);
+
+  transition: --mood-a 1.4s ease, --mood-b 1.4s ease;
+}
+
+:root[data-theme='dark'] {
+  --bg: #10122a;
+  --panel: #1a1d3c;
+  --panel-2: #22264a;
+  --ink: #eef0ff;
+  --ink-2: #b9bddf;
+  --ink-3: #8f94bd;
+  --line: #2c3060;
+  --brand: #9a9aff;
+  --brand-ink: #10122a;
+  --brand-soft: #2a2d5c;
+  --lagoon: #4fc4b5;
+  --gold: #f2b84b;
+  --rose: #ff7a90;
+
+  --sev-mild: #5ad0c0;
+  --sev-moderate: #f2b84b;
+  --sev-severe: #ff7a90;
+  --sev-mild-bg: #1d3b44;
+  --sev-moderate-bg: #43361f;
+  --sev-severe-bg: #482536;
+
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -10px rgb(0 0 0 / 0.5);
+  --shadow-2: 0 24px 60px -20px rgb(0 0 0 / 0.7);
+
+  --sky-top: color-mix(in srgb, var(--mood-a) 55%, #1a1d3c);
+  --sky-bottom: color-mix(in srgb, var(--mood-b) 25%, #1a1d3c);
+  --sun: #f4e2a0;
+  --hill-far: #2f5a58;
+  --hill-near: #23463f;
+  --leaf: #4fb877;
+  --leaf-2: #6fcf8c;
+  --stem: #8fb37a;
+  --garden-frame: var(--ink-3);
+}

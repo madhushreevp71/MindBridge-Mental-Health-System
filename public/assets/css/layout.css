@@ -1,0 +1,76 @@
+/* App shell and the welcome screen. */
+
+.app { display: grid; grid-template-columns: 248px minmax(0, 1fr); min-height: 100vh; }
+
+/* ---------- Side rail ---------- */
+.rail { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; padding: 22px 16px; gap: 22px; border-right: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 70%, transparent); backdrop-filter: blur(12px); }
+.brand { display: flex; align-items: center; gap: 10px; padding: 4px 10px; font-family: var(--font-display); font-weight: 700; font-size: 1.28rem; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+.logo-mark { color: var(--ink); display: inline-flex; }
+.nav-links { display: grid; gap: 4px; }
+.nav-link { display: flex; align-items: center; gap: 13px; padding: 11px 14px; border-radius: 14px; color: var(--ink-2); text-decoration: none; font-weight: 600; transition: background 0.15s, color 0.15s; }
+.nav-link:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); color: var(--ink); }
+.nav-link.active { background: var(--brand-soft); color: var(--ink); }
+.nav-link.active .icon { color: var(--brand); }
+.rail-foot { margin-top: auto; display: grid; gap: 10px; }
+.breathe-link { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; border: 1px dashed color-mix(in srgb, var(--lagoon) 55%, transparent); background: color-mix(in srgb, var(--lagoon) 10%, transparent); color: var(--ink); font-weight: 600; }
+.breathe-link .icon { color: var(--lagoon); }
+.me { display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 10px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+.me-text { display: grid; min-width: 0; flex: 1; }
+.me-text strong { font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.me-text small { text-transform: capitalize; }
+
+/* ---------- Main column ---------- */
+.main { min-width: 0; display: flex; flex-direction: column; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 40px 6px; }
+.page-title { font-size: 1.15rem; font-weight: 600; color: var(--ink-2); outline: none; }
+.top-actions { display: flex; align-items: center; gap: 6px; }
+.palette-btn { display: inline-flex; align-items: center; gap: 8px; padding: 7px 10px 7px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--panel); color: var(--ink-3); font-size: 0.88rem; margin-right: 6px; }
+.palette-btn:hover { border-color: var(--brand); color: var(--ink); }
+.view { padding: 10px 40px 64px; outline: none; flex: 1; }
+.page { max-width: 1120px; margin: 0 auto; }
+.page.narrow { max-width: 680px; }
+.page.narrow-wide { max-width: 860px; }
+
+/* ---------- Phones: rail becomes a bottom bar ---------- */
+@media (max-width: 860px) {
+  .app { grid-template-columns: 1fr; }
+  .rail { position: fixed; z-index: 50; inset: auto 0 0 0; top: auto; height: auto; flex-direction: row; padding: 6px 8px calc(6px + env(safe-area-inset-bottom)); border-right: 0; border-top: 1px solid var(--line); background: color-mix(in srgb, var(--panel) 92%, transparent); }
+  .brand, .rail-foot { display: none; }
+  .nav-links { display: flex; width: 100%; justify-content: space-around; }
+  .nav-link { flex-direction: column; gap: 2px; padding: 7px 8px; font-size: 0.7rem; flex: 1; text-align: center; border-radius: 12px; }
+  .topbar { padding: 16px 18px 4px; }
+  .palette-btn span, .palette-btn kbd { display: none; }
+  .palette-btn { padding: 9px; margin-right: 0; border: 0; background: transparent; }
+  .view { padding: 8px 18px 110px; }
+}
+
+/* ---------- Welcome / auth ---------- */
+.auth { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); min-height: 100vh; }
+.auth-art { position: relative; overflow: hidden; display: flex; align-items: flex-end; padding: 48px; background: linear-gradient(160deg, #1e2150, #10122a 70%); color: #fff; }
+.auth-blob { position: absolute; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; filter: blur(8px); animation: drift 16s ease-in-out infinite alternate; }
+.auth-blob.b1 { width: 460px; height: 460px; top: -120px; left: -80px; background: radial-gradient(circle at 30% 30%, #8b8bff, #4f4fd0 60%, transparent 72%); opacity: 0.85; }
+.auth-blob.b2 { width: 380px; height: 380px; top: 22%; right: -120px; background: radial-gradient(circle at 40% 40%, #5ad0c0, #1f8a7e 60%, transparent 72%); animation-delay: -5s; opacity: 0.8; }
+.auth-blob.b3 { width: 300px; height: 300px; bottom: -80px; left: 22%; background: radial-gradient(circle at 40% 40%, #f6d27a, #e9a92e 58%, transparent 72%); animation-delay: -9s; opacity: 0.7; }
+@keyframes drift { to { transform: translate(40px, 30px) rotate(40deg) scale(1.08); border-radius: 45% 55% 40% 60% / 55% 45% 60% 40%; } }
+.auth-art-copy { position: relative; display: grid; gap: 22px; max-width: 430px; }
+.auth-brand { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; }
+.auth-brand .logo-mark { color: #fff; }
+.auth-line { font-family: var(--font-display); font-size: clamp(1.7rem, 3vw, 2.5rem); line-height: 1.12; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+.auth-side { display: grid; place-items: center; padding: 40px 24px; overflow-y: auto; }
+.auth-panel { width: min(100%, 420px); display: grid; gap: 6px; }
+.auth-panel h1 { font-size: 2rem; }
+.auth-panel .lede { margin-bottom: 18px; }
+.auth-form { display: grid; gap: 14px; }
+.auth-form .field { margin: 0; }
+.doctor-fields { display: grid; gap: 12px; padding: 16px; border: 1px dashed var(--line); border-radius: var(--r-md); }
+.doctor-fields legend { padding: 0 8px; font-weight: 700; font-family: var(--font-display); }
+.demo { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+.switch { margin-top: 12px; text-align: center; color: var(--ink-2); }
+
+@media (max-width: 860px) {
+  .auth { grid-template-columns: 1fr; }
+  .auth-art { min-height: 210px; padding: 28px 24px; }
+  .auth-line { font-size: 1.35rem; }
+  .auth-brand { font-size: 1.3rem; }
+  .auth-blob { transform: scale(0.6); }
+}

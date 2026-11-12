@@ -1,0 +1,31 @@
+{
+  "name": "mindbridge",
+  "version": "2.0.0",
+  "description": "MindBridge - a student mental-health support platform (mood tracking, check-ins, AI companion, doctor appointments).",
+  "main": "server/server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "db:setup": "node scripts/setup-db.js",
+    "db:seed": "node scripts/seed.js",
+    "db:reset": "node scripts/setup-db.js --drop && node scripts/seed.js",
+    "check": "node scripts/check-syntax.js",
+    "smoke": "node scripts/smoke-test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
