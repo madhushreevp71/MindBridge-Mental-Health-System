@@ -1,4 +1,4 @@
-# 🌿 MindBridge – Mental Health Support System
+#  MindBridge – Mental Health Support System
 
 ### Bridging the Gap Between Students and Mental Health Support
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 About the Project
+##  About the Project
 
 College life can sometimes bring academic pressure, stress, anxiety, and other emotional challenges. However, many students hesitate to seek help or do not know where to start.
 
@@ -24,9 +24,9 @@ Our goal is to make mental health support easier to access through a simple, use
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 👩‍🎓 1. Student Module
+###  1. Student Module
 
 - **Student Registration and Login:** Allows students to create accounts and securely access the platform.
 - **Student Dashboard:** Provides an overview of activities and well-being information.
@@ -39,14 +39,14 @@ Our goal is to make mental health support easier to access through a simple, use
 - **Doctor Appointment Booking:** Allows students to explore available doctors and request appointments.
 - **Reminders and Notifications:** Keeps students informed about important activities and updates.
 
-### 🩺 2. Doctor Module
+###  2. Doctor Module
 
 - **Doctor Login:** Approved doctors can access their dedicated dashboard.
 - **Caseload Management:** Allows doctors to view and manage assigned student cases.
 - **Appointment Management:** Enables doctors to review appointment requests and manage schedules.
 - **Student Information:** Provides relevant student information for follow-up and support.
 
-### 🛡️ 3. Admin Module
+###  3. Admin Module
 
 - **Admin Dashboard:** Displays an overview of platform activities.
 - **Doctor Verification:** Allows administrators to review and verify doctor registrations.
