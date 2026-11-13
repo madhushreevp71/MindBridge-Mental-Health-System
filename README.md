@@ -1,177 +1,135 @@
-# MindBridge – Mental Health Support System
+# 🌿 MindBridge – Mental Health Support System
 
-### A web application to support student mental well-being
+### Bridging the Gap Between Students and Mental Health Support
 
-## About the Project
+**MindBridge** is a web-based mental wellness platform designed to make mental health support more accessible to students. It provides a centralized space where students can monitor their emotional well-being, track their moods, access self-care resources, interact with a mental health companion, and connect with professional doctors.
 
-MindBridge is a web-based platform developed to make mental health support more accessible to students.
+---
 
-College life can sometimes bring academic pressure, stress, anxiety, and other emotional challenges. However, many students hesitate to seek help or do not know where to start. We developed MindBridge to bring different mental health support features together in one place.
+## 📌 About the Project
 
-Through this application, students can track their mood, complete well-being check-ins, explore helpful resources, interact with a companion, and book appointments with doctors when needed.
+College life can sometimes bring academic pressure, stress, anxiety, and other emotional challenges. However, many students hesitate to seek help or do not know where to start.
 
-The platform also provides separate dashboards for students, doctors, and administrators.
+To address this problem, we developed **MindBridge**, a web application that brings multiple mental health support features together in one platform.
 
-## Features
+The application encourages students to understand their emotions, maintain healthy habits, and seek professional assistance when required.
 
-### 1. Student Features
+MindBridge provides three separate interfaces for:
 
-- **Student Registration and Login:** Students can create an account and securely log in.
-- **Dashboard:** Provides an overview of the student's activities and well-being.
-- **Daily Check-in:** Allows students to record their mood and answer questions about how they are feeling.
-- **Mood Tracking:** Students can track their mood over time and view their progress.
+- **Students:** To monitor their mental well-being and access support.
+- **Doctors:** To manage student cases and appointment requests.
+- **Administrators:** To manage users and verify doctor registrations.
+
+Our goal is to make mental health support easier to access through a simple, user-friendly, and organized digital platform.
+
+---
+
+## ✨ Key Features
+
+### 👩‍🎓 1. Student Module
+
+- **Student Registration and Login:** Allows students to create accounts and securely access the platform.
+- **Student Dashboard:** Provides an overview of activities and well-being information.
+- **Daily Check-in:** Enables students to record their mood and answer questions about how they are feeling.
+- **Mood Tracking:** Helps students monitor their emotional patterns over time.
 - **Well-being Journey:** Displays mood history and progress through visual representations.
 - **Mental Health Companion:** Provides an interactive space where students can share their thoughts and receive supportive responses.
-- **Breathing Exercises:** Includes guided breathing activities to help students relax.
-- **Mental Health Resources:** Provides access to helpful information and self-care support.
-- **Doctor Appointment Booking:** Students can view available doctors and request appointments.
-- **Reminders and Notifications:** Helps students keep track of important activities and updates.
+- **Breathing Exercises:** Offers guided breathing activities to encourage relaxation.
+- **Mental Health Resources:** Provides useful information and self-care resources.
+- **Doctor Appointment Booking:** Allows students to explore available doctors and request appointments.
+- **Reminders and Notifications:** Keeps students informed about important activities and updates.
 
-### 2. Doctor Features
+### 🩺 2. Doctor Module
 
 - **Doctor Login:** Approved doctors can access their dedicated dashboard.
-- **Caseload Management:** Doctors can view and manage their assigned student cases.
-- **Appointment Management:** Doctors can view appointment requests and manage their schedules.
-- **Student Information:** Provides relevant information to help doctors follow up with students.
+- **Caseload Management:** Allows doctors to view and manage assigned student cases.
+- **Appointment Management:** Enables doctors to review appointment requests and manage schedules.
+- **Student Information:** Provides relevant student information for follow-up and support.
 
-### 3. Admin Features
+### 🛡️ 3. Admin Module
 
-- **Admin Dashboard:** Displays an overview of platform activity.
-- **Doctor Verification:** Administrators can review and verify doctor registrations.
-- **User Management:** Allows administrators to view and manage student and doctor accounts.
-- **Platform Management:** Provides a central place to monitor the application's users and activities.
+- **Admin Dashboard:** Displays an overview of platform activities.
+- **Doctor Verification:** Allows administrators to review and verify doctor registrations.
+- **User Management:** Enables administrators to view and manage student and doctor accounts.
+- **Platform Management:** Provides centralized management of application users and activities.
 
-## Technology Stack
+---
 
-| Area              | Technologies                    |
-| ----------------- | ------------------------------- |
-| Frontend          | HTML, CSS, JavaScript           |
-| Backend           | Node.js, Express.js             |
-| Database          | MySQL                           |
-| Authentication    | JSON Web Token (JWT), bcryptjs  |
-| API               | REST APIs                       |
-| Development Tools | Visual Studio Code, Git, GitHub |
+## 🛠️ Technology Stack
 
-## How the Application Works
+| Category | Technologies |
+|---|---|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Node.js, Express.js |
+| Database | MySQL |
+| Authentication | JSON Web Token (JWT) |
+| Password Security | bcryptjs |
+| API Communication | REST APIs |
+| Development Environment | Visual Studio Code |
+| Version Control | Git and GitHub |
 
-1. Students register or log in to the application.
-2. After logging in, they can access their personal dashboard.
-3. They can complete daily check-ins and record their moods.
-4. Their well-being journey helps them review their mood history and progress.
-5. Students can use the mental health companion and breathing exercises for additional support.
-6. If they need professional assistance, they can explore doctor appointments and submit a request.
-7. Doctors manage their caseloads and appointment requests through their dashboard.
-8. Administrators manage users and verify doctor accounts.
+---
 
-## Installation and Setup
+## 🏗️ System Architecture
 
-Follow these steps to run MindBridge on your local system.
+MindBridge follows a three-tier web application architecture.
 
-### Prerequisites
+### 1. Presentation Layer
+- Developed using HTML, CSS, and JavaScript.
+- Provides interactive interfaces for students, doctors, and administrators.
+- Communicates with the backend through API requests.
 
-- Node.js (version 18 or above)
-- npm
-- MySQL 8 or MariaDB 10.6 and above
-- Git
+### 2. Application Layer
+- Developed using Node.js and Express.js.
+- Handles application logic and user requests.
+- Manages authentication, authorization, and application operations.
+- Provides REST APIs for communication between frontend and backend.
 
-### 1. Clone the Repository
+### 3. Database Layer
+- Uses MySQL to store application data.
+- Manages student information, doctor details, mood records, appointments, and other application data.
 
-```bash
-git clone https://github.com/madhushreevp71/MindBridge-Mental-Health-System.git
-```
-
-### 2. Open the Project Folder
-
-```bash
-cd MindBridge-Mental-Health-System
-```
-
-### 3. Install Dependencies
-
-```bash
-npm install
-```
-
-### 4. Configure Environment Variables
-
-Create a `.env` file using the `.env.example` file as a reference.
-
-On Windows PowerShell:
-
-```powershell
-Copy-Item .env.example .env
-```
-
-Update the database credentials and other required configuration values in the `.env` file.
-
-Keep your passwords, API keys, and secret values private. Do not upload your `.env` file to GitHub.
-
-### 5. Set Up the Database
-
-```bash
-npm run db:setup
-```
-
-To insert the initial application data, run:
-
-```bash
-npm run db:seed
-```
-
-### 6. Start the Application
-
-```bash
-npm start
-```
-
-Open the following address in your browser:
+### Architecture Flow
 
 ```text
-http://localhost:4000
+          USERS
+            |
+            |
+   ---------------------
+   |         |         |
+ Student   Doctor    Admin
+   |         |         |
+   ---------------------
+            |
+            |
+      FRONTEND LAYER
+     HTML, CSS, JavaScript
+            |
+            |
+        REST APIs
+            |
+            |
+      BACKEND LAYER
+       Node.js
+      Express.js
+            |
+            |
+    Authentication
+       JWT
+    Password Hashing
+      bcryptjs
+            |
+            |
+      DATABASE LAYER
+          MySQL
 ```
 
-## Project Structure
+---
 
-```text
-MindBridge-Mental-Health-System/
-│
-├── database/
-├── public/
-│   ├── assets/
-│   │   ├── css/
-│   │   ├── js/
-│   │   └── images/
-│   └── ...
-│
-├── scripts/
-├── server/
-├── docs/
-├── .env.example
-├── package.json
-└── README.md
-```
+## 🔄 How the Application Works
 
-## My Contribution
-
-My main responsibilities included:
-
-- Working on the frontend and application interface.
-- Integrating APIs with the application.
-- Debugging issues and checking whether the different features worked as expected.
-- Coordinating with team members during development.
-- Helping integrate and test the different parts of the application.
-
-Working on this project gave me practical experience in developing a web application and connecting its frontend, backend, and database. It also helped me improve my leadership, communication, teamwork, and problem-solving skills.
-
-## Future Enhancements
-
-Some features that could be added in future versions are:
-
-- Online video consultations with doctors.
-- More personalized mental health recommendations.
-- Additional language support.
-- Improved progress reports and well-being insights.
-- More accessibility features.
-- Additional options for communication between students and doctors.
-
-*Developed as an academic team project to make mental health support easier for students to access.*
+1. Students register or log in to the MindBridge application.
+2. After successful authentication, students are redirected to their personal dashboard.
+3. Students complete daily check-ins by recording their moods and answering well-being questions.
+4. The application maintains mood records to help students review their emotional patterns.
+5. Students can explore their well-being journey through visual representations.
