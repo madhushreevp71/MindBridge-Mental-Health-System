@@ -112,12 +112,6 @@ Keep your passwords, API keys, and secret values private. Do not upload your `.e
 npm run db:setup
 ```
 
-To insert the initial application data, run:
-
-```bash
-npm run db:seed
-```
-
 ### 6. Start the Application
 
 ```bash
@@ -150,6 +144,54 @@ MindBridge-Mental-Health-System/
 ├── package.json
 └── README.md
 ```
+
+## Application Screenshots
+
+The following screenshots showcase the user interface and major features of MindBridge.
+
+### 1. Login Page
+<img width="1507" height="686" alt="WhatsApp Image 2026-11-14 at 12 02 11 PM" src="https://github.com/user-attachments/assets/eb924f5c-e0f9-4aec-99cc-93399cec1fe0" />
+
+
+### 2. Student Dashboard
+<img width="1512" height="690" alt="WhatsApp Image 2026-11-14 at 12 09 04 PM" src="https://github.com/user-attachments/assets/def0ad71-5fe4-4b2f-967a-023299d06922" />
+
+
+### 3. Mood Tracking and Well-being Journey
+<img width="1519" height="685" alt="WhatsApp Image 2026-11-14 at 12 05 52 PM" src="https://github.com/user-attachments/assets/fb09d300-3ef7-409e-9384-0ef042c4760c" />
+
+
+### 4. Daily Check-in
+<img width="1502" height="685" alt="WhatsApp Image 2026-11-14 at 12 06 33 PM" src="https://github.com/user-attachments/assets/149c6551-2524-4f8d-9825-9131b338d918" />
+
+### 5. Mental Health Assessment
+<img width="1534" height="675" alt="WhatsApp Image 2026-11-14 at 12 07 00 PM" src="https://github.com/user-attachments/assets/0bcd6c91-7f12-4bfa-b395-bb5baed4f2ae" />
+
+
+### 6. Mental Health AI Companion
+<img width="1517" height="674" alt="WhatsApp Image 2026-11-14 at 12 07 59 PM" src="https://github.com/user-attachments/assets/2b0ffe11-21e8-4c74-8371-627b8d110dde" />
+
+
+### 7. Guided Breathing Exercise
+<img width="1530" height="646" alt="WhatsApp Image 2026-11-14 at 12 10 53 PM" src="https://github.com/user-attachments/assets/1a5786c9-d8ac-432d-a86a-b663c63724b7" />
+
+
+### 8. Doctor Appointment Booking
+<img width="1490" height="652" alt="image" src="https://github.com/user-attachments/assets/75ebe8b3-2485-4f1a-9baf-dfa1e6699075" />
+
+
+### 9. Doctor Dashboard
+<img width="1526" height="644" alt="WhatsApp Image 2026-11-14 at 12 12 32 PM" src="https://github.com/user-attachments/assets/7b96ad6a-afd0-4551-a4f9-1542a2941d2d" />
+
+
+### 10. Appointment Management
+<img width="1530" height="675" alt="WhatsApp Image 2026-11-14 at 12 13 01 PM" src="https://github.com/user-attachments/assets/3580fb93-6eec-4db8-a89e-81c19cb0b832" />
+
+### 11. Admin accesssability
+<img width="1534" height="662" alt="image" src="https://github.com/user-attachments/assets/40b04441-3ccd-479a-9c17-14324722cbbe" />
+
+### 12. Verification and approval by admin
+<img width="1507" height="678" alt="WhatsApp Image 2026-11-14 at 12 15 08 PM" src="https://github.com/user-attachments/assets/d2c074c4-0de8-49dd-bfae-557ce49da38d" />
 
 ## My Contribution
 
